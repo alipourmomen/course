@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>courses list</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Courses List</h1>
+        <hr>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">title</th>
+                <th scope="col">description</th>
+                <th scope="col">situation</th>
+                <th scope="col">views</th>
+                <th scope="col">id</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for course in courses_list %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a href="/course/detail/{{ course.id }}">{{ course.title }}</a></td>
+                <td>{{ course.description }}</td>
+                <td>{{ course.situation }}</td>
+                <td>{{ course.views }}</td>
+                <td>{{ course.id }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
